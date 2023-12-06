@@ -30,12 +30,22 @@ const Userspage = async () => {
   return (
     <>
       <h1>Users</h1>
-      <p>{new Date().toLocaleTimeString()}</p>
-      <ul>
+      <table className='table table-bordered'>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
         {users.map(user => (
-          <li key={user.id}>{user.name}</li>
+          <tr key={user.id}>
+            <td>{user.name}</td>
+            <td>{user.email}</td>
+          </tr>
         ))}
-      </ul>
+        </tbody>
+      </table>
     </>
   )
 }
